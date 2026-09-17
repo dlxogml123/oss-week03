@@ -41,7 +41,9 @@ sleep(10).then(() => console.log("F"));
 
 console.log("G");
 
-// prediction:
-// actual:
-// why I was wrong (one line per miss):
-//
+// prediction: AGCFBDE
+// actual: ADGCFEB
+// why I was wrong (one line per miss): A는 곧바로 찍히는게 맞고,
+// B, C는 예약을 걸어뒀다. work함수를 실행하니까 D를 찍고 30초 후 E를 예약해놓은 뒤,
+// 10초후 F를 출력하고, G를 출력하므로 ADG가 바로 출력되고 그 뒤에 0초 예약인 C가 나오고
+// 예약순서 차례대로 F, E, B가 출력되어야한다.
